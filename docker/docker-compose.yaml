@@ -3,7 +3,7 @@ name: "road_vision__database"
 
 services:
   postgres_db:
-    image: postgres:latest
+    image: postgres:16
     container_name: postgres_db
     restart: always
     environment:
@@ -14,7 +14,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./db/structure.sql:/docker-entrypoint-initdb.d/structure.sql
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - db_network
 
